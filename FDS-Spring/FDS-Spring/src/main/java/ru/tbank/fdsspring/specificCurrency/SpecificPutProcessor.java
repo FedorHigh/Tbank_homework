@@ -8,17 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.reflect.Array;
 import java.util.AbstractMap;
-//import java.util.Pair;
+
 
 @RestController
 public class SpecificPutProcessor {
 
 
-    public Array currencies;
-
-    public void AddCurrency(AbstractMap.SimpleEntry<String, Integer> cur){
-        //
-    }
 
     @PostMapping("/currencies/{id}")
     public ResponseEntity<String> AddCurrency(@PathVariable String id){
