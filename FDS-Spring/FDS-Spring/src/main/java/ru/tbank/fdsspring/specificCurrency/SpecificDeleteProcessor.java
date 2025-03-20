@@ -1,0 +1,27 @@
+package ru.tbank.fdsspring.specificCurrency;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.lang.reflect.Array;
+import java.util.AbstractMap;
+//import java.util.Pair;
+
+@RestController
+public class SpecificDeleteProcessor {
+
+
+    public Array currencies;
+
+    public void AddCurrency(AbstractMap.SimpleEntry<String, Integer> cur){
+        //
+    }
+
+    @DeleteMapping("/currencies/{id}")
+    public ResponseEntity<String> AddCurrency(@PathVariable String id){
+        return ResponseEntity.ok(id);
+    }
+}
