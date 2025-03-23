@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk AS builder
+FROM node:23
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ COPY . .
 
 RUN ./gradlew clean build -x test
 
-FROM eclipse-temurin:21-jre
+FROM node:23
 
 WORKDIR /app
 
