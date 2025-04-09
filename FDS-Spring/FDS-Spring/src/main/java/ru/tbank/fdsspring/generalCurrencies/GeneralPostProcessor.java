@@ -4,6 +4,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import ru.tbank.fdsspring.CurrencyRepository;
+import ru.tbank.fdsspring.schemas.Currency;
+import ru.tbank.fdsspring.schemas.CurrencyRequest;
 
 import java.lang.reflect.Array;
 import java.util.AbstractMap;
@@ -16,14 +19,19 @@ public class GeneralPostProcessor {
 
 
     public Array currencies;
+    public CurrencyRepository repo;
 
     public void AddCurrency(AbstractMap.SimpleEntry<String, Integer> cur){
         //
     }
 
     @PostMapping("/currencies")
-    public ResponseEntity<String> AddCurrency(@RequestBody String reqName){
-        if(!reqName.isEmpty() && reqName != null) return ResponseEntity.ok(reqName);
-        else return (ResponseEntity<String>) ResponseEntity.badRequest();
+    public ResponseEntity<Currency> AddCurrency(@RequestBody CurrencyRequest req){
+        if(req != null) {
+            Currency newCurrency = new Currency(req);
+            repo.save(newCurrency);
+            return ResponseEntity.ok(newCurrency);
+        }
+        else return (ResponseEntity<Currency>) ResponseEntity.badRequest();
     }
 }
