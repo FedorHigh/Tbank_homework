@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.tbank.fdsspring.CurrencyRepository;
+import ru.tbank.fdsspring.specificCurrency.CurrencyRepository;
 import ru.tbank.fdsspring.schemas.Currency;
 import ru.tbank.fdsspring.schemas.CurrencyRequest;
 
@@ -26,8 +26,8 @@ public class GeneralPostProcessor {
     }
 
     @PostMapping("/currencies")
-    public ResponseEntity<Currency> AddCurrency(@RequestBody CurrencyRequest req){
-        if(req != null) {
+    public ResponseEntity<Currency> addCurrency(@RequestBody CurrencyRequest req){
+        if(1==1) {
             Currency newCurrency = new Currency(req);
             repo.save(newCurrency);
             return ResponseEntity.ok(newCurrency);

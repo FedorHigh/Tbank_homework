@@ -3,7 +3,6 @@ package ru.tbank.fdsspring.schemas;
 import jakarta.persistence.Entity;
 import lombok.*;
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor

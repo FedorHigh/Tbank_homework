@@ -1,10 +1,9 @@
 package ru.tbank.fdsspring.generalCurrencies;
 
-import org.aspectj.apache.bcel.util.Repository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.tbank.fdsspring.CurrencyRepository;
+import ru.tbank.fdsspring.specificCurrency.CurrencyRepository;
 import ru.tbank.fdsspring.schemas.Currency;
 
 import java.lang.reflect.Array;
@@ -26,7 +25,7 @@ public class GeneralGetProcessor {
     }
 
     @GetMapping("/currencies")
-    public ResponseEntity<List<Currency>> GetCurrencies(){
+    public ResponseEntity<List<Currency>> getCurrencies(){
         return ResponseEntity.ok(repo.GetAllCurrencies());
     }
 }

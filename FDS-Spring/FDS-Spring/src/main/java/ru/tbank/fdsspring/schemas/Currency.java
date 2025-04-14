@@ -1,19 +1,20 @@
 package ru.tbank.fdsspring.schemas;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
-import ru.tbank.fdsspring.CurrencyRepository;
 
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 public class Currency {
-    String id;
-    String name;
-    String baseCurrency = "RUB";
-    String priceChangeRate;
-    String description;
+    @Id
+    private String id;
+    private String name;
+    private String baseCurrency = "RUB";
+    private String priceChangeRate;
+    private String description;
 
     public Currency(CurrencyRequest req) {
         name = req.name;
