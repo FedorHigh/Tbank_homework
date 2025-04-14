@@ -11,11 +11,19 @@ import lombok.*;
 public class Currency {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    private String name;
-    private String basecurrency = "RUB";
-    private String pricechangerate;
-    private String description;
+    public String id;
+    @Getter
+    @Setter
+    public String name;
+    @Getter
+    @Setter
+    public String basecurrency = "RUB";
+    @Getter
+    @Setter
+    public String pricechangerate;
+    @Getter
+    @Setter
+    public String description;
 
     public Currency(CurrencyRequest req) {
         name = req.name;
