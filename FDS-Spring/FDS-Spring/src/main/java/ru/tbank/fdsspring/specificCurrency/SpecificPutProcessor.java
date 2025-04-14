@@ -21,7 +21,7 @@ public class SpecificPutProcessor {
     }
 
     @PostMapping("/currencies/{id}")
-    public ResponseEntity<String> AddCurrency(@PathVariable String id){
-        return ResponseEntity.ok(id);
+    public ResponseEntity<Integer> AddCurrency(@PathVariable String id){
+        return ResponseEntity.ok(69);
     }
 }
