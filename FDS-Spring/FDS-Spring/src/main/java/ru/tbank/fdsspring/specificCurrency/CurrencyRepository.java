@@ -19,4 +19,17 @@ public interface CurrencyRepository extends JpaRepository<Currency, Long> {
     c.id = :id
     """, nativeQuery = true)
     Currency GetCurrencyByID(Long id);
+
+    @Query(value= """
+    SELECT * FROM currency c WHERE
+    c.basecurrency = :basecurrency
+    """, nativeQuery = true)
+    Currency GetCurrencyByBaseCurrency(String basecurrency);
+
+    @Query(value= """
+    UPDATE currency SET pricechangerate = :pricechangerate WHERE
+    basecurrency = :basecurrency
+    """, nativeQuery = true)
+    Currency UpdatePriceChangeRateByBaseCurrency(String basecurrency, String pricechangerate);
+
 }
