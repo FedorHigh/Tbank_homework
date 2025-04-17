@@ -17,7 +17,7 @@ public class SpecificGetProcessor {
 
 
     @GetMapping("/currencies/{id}")
-    public ResponseEntity<Integer> GetCurrencies(@PathVariable Integer id){
-        return ResponseEntity.ok(id);
+    public ResponseEntity<Integer> getCurrencies(@PathVariable Integer id){
+        return ResponseEntity.ok(69);
     }
 }
