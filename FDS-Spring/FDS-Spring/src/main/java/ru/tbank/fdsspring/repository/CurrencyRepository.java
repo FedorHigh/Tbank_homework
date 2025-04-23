@@ -8,6 +8,7 @@ import java.util.List;
 
 @org.springframework.stereotype.Repository
 public interface CurrencyRepository extends JpaRepository<Currency, Long> {
+
     @Query(value= """
     SELECT * FROM currency
     """, nativeQuery = true)
@@ -32,4 +33,11 @@ public interface CurrencyRepository extends JpaRepository<Currency, Long> {
     WHERE id = :id
     """, nativeQuery = true)
     void updateCurrencyByID(Long id, String name, String basecurrency, String pricechangerate, String description);
+
+    @Query(value= """
+            UPDATE currency
+               SET pricechangerate = 'new'
+             WHERE basecurrency = 'EUR'
+    """, nativeQuery = true)
+    void updatePriceChangeRateByBaseCurrency(String b, String p);
 }

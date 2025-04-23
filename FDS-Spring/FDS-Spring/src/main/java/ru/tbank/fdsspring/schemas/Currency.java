@@ -6,7 +6,6 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @Table(name = "currency")
 public class Currency {
     @Id
@@ -24,7 +23,7 @@ public class Currency {
     @Getter
     @Setter
     public String description;
-
+    public Currency(){}
     public Currency(CurrencyRequest req) {
         name = req.name;
         basecurrency = req.baseCurrency;
