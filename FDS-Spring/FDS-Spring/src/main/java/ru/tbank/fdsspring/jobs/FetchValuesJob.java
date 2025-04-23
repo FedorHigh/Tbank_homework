@@ -1,5 +1,7 @@
 package ru.tbank.fdsspring.jobs;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -8,7 +10,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 import ru.tbank.fdsspring.schemas.Currency;
+import ru.tbank.fdsspring.service.CurrencyService;
 import ru.tbank.fdsspring.service.RestFetcherService;
 import ru.tbank.fdsspring.repository.CurrencyRepository;
 
@@ -18,12 +22,11 @@ import java.util.Optional;
 import java.util.function.Function;
 
 @Component
+@RequiredArgsConstructor
 public class FetchValuesJob {
-
     @Autowired
-    private CurrencyRepository repo;
-    @Autowired
-    private RestFetcherService fetcher;
+    private final CurrencyService repo;
+    private final RestFetcherService fetcher = new RestFetcherService();
 
     @Scheduled(cron = "0/10 * * * * ?")
     public void fecthAndUpdateCurrencies(){

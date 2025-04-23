@@ -2,6 +2,7 @@ package ru.tbank.fdsspring.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,15 +21,10 @@ import java.util.Map;
 @Service
 public class RestFetcherService {
 
-
-    private final RestTemplate restTemplate;
-    private final ObjectMapper objectMapper;
+    private final RestTemplate restTemplate = new RestTemplate();
+    private final ObjectMapper objectMapper = new ObjectMapper();
     public String cbrUrl = "https://www.cbr-xml-daily.ru/daily_json.js";
 
-    public RestFetcherService() {
-        this.restTemplate = new RestTemplate();
-        this.objectMapper = new ObjectMapper();
-    }
 
     public List<Currency> FecthCurrenciesFromCbr(){
         String response = restTemplate.getForObject(cbrUrl, String.class);
