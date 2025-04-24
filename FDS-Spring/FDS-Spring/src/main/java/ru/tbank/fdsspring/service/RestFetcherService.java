@@ -14,11 +14,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-@Component
+
 @RequiredArgsConstructor
 public class RestFetcherService {
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
     public String cbrUrl = "https://www.cbr-xml-daily.ru/daily_json.js";
@@ -45,14 +48,18 @@ public class RestFetcherService {
 
                     Currency cur = new Currency();
                     cur.name = "temporary currency";
-                    cur.basecurrency = (node.get("CharCode").asText());
-                    Double pricechangerate = 1 - (((node.get("Value").asDouble())/(node.get("Previous").asDouble())));
-                    pricechangerate = Math.round(pricechangerate * 100.0)/100.0;
+                    cur.baseCurrency = (node.get("CharCode").asText());
+                    Double priceChangeRate = 1 - (((node.get("Value").asDouble())/(node.get("Previous").asDouble())));
+                    priceChangeRate = Math.round(priceChangeRate * 100.0)/100.0;
 
-                    if (pricechangerate > 0) cur.pricechangerate = "+" + pricechangerate.toString();
-                    else cur.pricechangerate = pricechangerate.toString();
+                    if (priceChangeRate > 0) cur.priceChangeRate = "+" + priceChangeRate.toString();
+                    else cur.priceChangeRate = priceChangeRate.toString();
 
+<<<<<<< Updated upstream
                     //System.out.println(cur.pricechangerate);
+=======
+                    //System.out.println(cur.priceChangeRate);
+>>>>>>> Stashed changes
                     result.add(cur);
                 }
             }

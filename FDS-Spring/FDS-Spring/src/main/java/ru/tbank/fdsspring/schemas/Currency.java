@@ -12,15 +12,20 @@ public class Currency {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public String id;
     public String name;
+<<<<<<< Updated upstream
     public String basecurrency = "RUB";
     public String pricechangerate;
+=======
+    public String baseCurrency = "RUB";
+    public String priceChangeRate;
+>>>>>>> Stashed changes
     public String description;
 
     public Currency(){};
     public Currency(CurrencyRequest req) {
         name = req.name;
-        basecurrency = req.baseCurrency;
-        pricechangerate = req.priceChangeRate;
+        baseCurrency = req.baseCurrency;
+        priceChangeRate = req.priceChangeRate;
         description = req.description;
     }
 }
