@@ -4,8 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import ru.tbank.fdsspring.service.RestFetcherService;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -23,6 +26,9 @@ public class FdsSpringApplication {
     //@Autowired
     //public static FetchValuesJob test = new FetchValuesJob();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -37,6 +43,9 @@ public class FdsSpringApplication {
 
        // test.fecthAndUpdateCurrencies();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

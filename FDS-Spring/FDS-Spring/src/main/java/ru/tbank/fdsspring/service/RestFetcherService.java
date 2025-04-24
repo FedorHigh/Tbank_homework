@@ -20,7 +20,10 @@ public class RestFetcherService {
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -60,7 +63,11 @@ public class RestFetcherService {
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     //System.out.println(cur.pricechangerate);
+=======
+                    //System.out.println(cur.priceChangeRate);
+>>>>>>> Stashed changes
 =======
                     //System.out.println(cur.priceChangeRate);
 >>>>>>> Stashed changes
