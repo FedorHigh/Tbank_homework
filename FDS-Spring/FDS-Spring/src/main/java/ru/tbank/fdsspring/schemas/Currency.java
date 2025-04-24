@@ -13,8 +13,13 @@ public class Currency {
     public String id;
     public String name;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public String basecurrency = "RUB";
     public String pricechangerate;
+=======
+    public String baseCurrency = "RUB";
+    public String priceChangeRate;
+>>>>>>> Stashed changes
 =======
     public String baseCurrency = "RUB";
     public String priceChangeRate;
